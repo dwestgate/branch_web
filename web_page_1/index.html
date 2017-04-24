@@ -174,7 +174,9 @@ function createBranchLink(deeplink_path, campaign, feature, channel, language) {
  
  
     if (responseData.url) {
-        return responseData.url;
+        document.getElementById("demo").innerHTML =
+    "URL: " + responseData.url + ".";
+//         return responseData.url;
     }
     else {
         return "Error no url found in response";
@@ -213,6 +215,8 @@ function logit(val) {
     
     <body>
  <p><a href="#" onClick="createBranchLink('splash', 'HAUS_welcome_email', 'marketing', 'email', 'en_US');">Top Text</a></p>
+        
+  <p id="demo"></p>
  </body>
     
     
