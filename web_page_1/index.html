@@ -57,6 +57,8 @@ function createBranchLink(deeplink_path, campaign, feature, channel, language) {
  
 //     var activeCellValue = SpreadsheetApp.getActiveSheet().getActiveCell().getValue();
     var desktop_deepview,custom_sms_text,og_title,og_description;
+    
+    var async = true;
  
  
  
@@ -127,6 +129,7 @@ function createBranchLink(deeplink_path, campaign, feature, channel, language) {
  
  
     var payload = {
+        "branch_key": "key_live_iloxIxoXURs2xAsdv8xCraifCBfYwHFn",
         "channel": channel,
         "campaign": campaign,
         "feature": feature,
@@ -136,8 +139,7 @@ function createBranchLink(deeplink_path, campaign, feature, channel, language) {
           "$custom_sms_text" : custom_sms_text,
           //"$og_title" : og_title,
           //"$og_description" : og_description
-        },
-        "branch_key": "key_live_iloxIxoXURs2xAsdv8xCraifCBfYwHFn"
+        }
     };
  
     if (deeplink_path) {
@@ -147,43 +149,56 @@ function createBranchLink(deeplink_path, campaign, feature, channel, language) {
     //generate url
     var url = "https://api.branch.io/v1/url";
     logit(url);
+    var method = "POST";
  
  
     var headers = {
         "Content-Type": "application/json"
     };
  
-    var options = {
-        'method': 'post',
-        'contentType': 'application/json; charset=utf-8',
-        //'headers': headers,
-        "payload": JSON.stringify(payload),
-        "muteHttpExceptions": true
-    };
+//     var options = {
+//         'method': 'post',
+//         'contentType': 'application/json; charset=utf-8',
+//         //'headers': headers,
+//         "payload": JSON.stringify(payload),
+//         "muteHttpExceptions": true
+//     };
+    
+    var request = new XMLHttpRequest();
+    request.onload = function () {
+
+   var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+   var data = request.responseText; // Returned data, e.g., an HTML document.
+        document.getElementById("demo").innerHTML =
+    "URL: " + data + ".";
+}
  
-    var response = null;
-    //retrieve link
+    request.open(method, url);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(payload);
+//     var response = null;
+//     //retrieve link
  
-    response = UrlFetchApp.fetch(url, options);
- 
- 
-    var responseData = JSON.parse(response.getContentText());
-    for (i in responseData) {
-        logit(i + ": " + response[i]);
-    }
+//     response = UrlFetchApp.fetch(url, options);
  
  
-    if (responseData.url) {
+//     var responseData = JSON.parse(response.getContentText());
+//     for (i in responseData) {
+//         logit(i + ": " + response[i]);
+//     }
+ 
+ 
+//     if (responseData.url) {
         document.getElementById("demo").innerHTML =
     "URL: " + responseData.url + ".";
 //         return responseData.url;
-    }
-    else {
-        return "Error no url found in response";
-    }
+//     }
+//     else {
+//         return "Error no url found in response";
+//     }
  
  
-    return "wow call ryan - 770.241.7983";
+//     return "wow call ryan - 770.241.7983";
  
  
 }
