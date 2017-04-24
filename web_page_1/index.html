@@ -7,61 +7,41 @@
     }); -->
     <head>
         <script type="text/javascript">
-var debug = false;
-var google = true;
+            var debug = false;
+            var google = true;
+            var languages = {
+                "en_US":{
+                    custom_sms_text:"Download the HomeAway and VRBO Mobile App: {{ link }}",
+                    desktop_deepview : "homeaway_deepview_en_US",
+                    og_title : "HomeAway & VRBO Vacation Rentals",
+                    og_description : "Travelers can browse more than 1 million vacation rental property listings all over the world."
+                },
+                "en_UK":{
+                    custom_sms_text:"Download the HomeAway and Owners Direct Mobile App: {{ link }}",
+                    desktop_deepview : "homeaway_deepview_en_UK",
+                    og_title : "HomeAway.co.uk & Owners Direct Holiday Rentals",
+                    og_description : "Travellers can browse more than 1 million holiday rental property listings all over the world."
+                },
+                "es_ES":{
+                    custom_sms_text:"Descarga gratis la App móvil de HomeAway y Homelidays: {{ link }}",
+                    desktop_deepview : "homeaway_deepview_es_ES",
+                    og_title : "HomeAway y Homelidays Casas de Vacaciones",
+                    og_description : "Los viajeros tienen acceso a más de 1 millón de propiedades de alquiler vacacional en todo el mundo."
+                },
+                "fr_FR":{
+                    custom_sms_text:"Téléchargez l'application Abritel et Homelidays: {{ link }}",
+                    desktop_deepview : "homeaway_deepview_fr_FR",
+                    og_title : "Abritel et Homelidays Location de Vacances",
+                    og_description : "Les vacanciers peuvent rechercher une location de vacances parmi plus d’1 million d’annonces dans le monde entier."
+                },
+                "de_DE":{
+                    custom_sms_text:"Laden Sie die FeWo-direkt Mobile App herunter: {{ link }}",
+                    desktop_deepview : "homeaway_deepview_de_DE",
+                    og_title : "FeWo-direkt HomeAway Ferienwohnungen & Ferienhäuser",
+                    og_description : "Raus in die Welt in wenigen Fingertipps - in unserer kostenlosen FeWo-direkt Urlaubs-App halten Sie über 1 Million Ferienhäuser und Ferienwohnungen rund um den Globus in einer Hand."
+                }
  
-var languages = {
-  "en_US":{
-    custom_sms_text:"Download the HomeAway and VRBO Mobile App: {{ link }}",
-    desktop_deepview : "homeaway_deepview_en_US",
-    og_title : "HomeAway & VRBO Vacation Rentals",
-    og_description : "Travelers can browse more than 1 million vacation rental property listings all over the world."
-  },
-  "en_UK":{
-    custom_sms_text:"Download the HomeAway and Owners Direct Mobile App: {{ link }}",
-    desktop_deepview : "homeaway_deepview_en_UK",
-    og_title : "HomeAway.co.uk & Owners Direct Holiday Rentals",
-    og_description : "Travellers can browse more than 1 million holiday rental property listings all over the world."
-  },
-  "es_ES":{
-    custom_sms_text:"Descarga gratis la App móvil de HomeAway y Homelidays: {{ link }}",
-    desktop_deepview : "homeaway_deepview_es_ES",
-    og_title : "HomeAway y Homelidays Casas de Vacaciones",
-    og_description : "Los viajeros tienen acceso a más de 1 millón de propiedades de alquiler vacacional en todo el mundo."
-  },
-  "fr_FR":{
-    custom_sms_text:"Téléchargez l'application Abritel et Homelidays: {{ link }}",
-    desktop_deepview : "homeaway_deepview_fr_FR",
-    og_title : "Abritel et Homelidays Location de Vacances",
-    og_description : "Les vacanciers peuvent rechercher une location de vacances parmi plus d’1 million d’annonces dans le monde entier."
-  },
-  "it_IT":{
-    custom_sms_text:"Scarica l'app di HomeAway e Homelidays: {{ link }}",
-    desktop_deepview : "homeaway_deepview_it_IT",
-    og_title : "HomeAway e Homelidays Casa Vacanza",
-    og_description : "I viaggiatori possono navigare tra più di 1 milione di annunci di case vacanza in tutto il mondo."
-  },
-  "pt_BR":{
-    custom_sms_text:"Baixe o app do AlugueTemporada e da HomeAway: {{ link }}",
-    desktop_deepview : "homeaway_deepview_pt_BR",
-    og_title : "AlugueTemporada & HomeAway aluguel por temporada",
-    og_description : "Os Viajantes podem buscar entre mais de 480.000 imóveis de aluguel por temporada no Brasil e no mundo."
-  },
-  "pt_PT":{
-    custom_sms_text:"Obtenha a aplicação móvel da HomeAway: {{ link }}",
-    desktop_deepview : "homeaway_deepview_pt_PT",
-    og_title : "HomeAway Casas de Férias",
-    og_description : "Os viajantes podem pesquisar entre mais de 1 milhão de propriedades de aluguer de férias em todo o mundo."
-  },
-  "de_DE":{
-    custom_sms_text:"Laden Sie die FeWo-direkt Mobile App herunter: {{ link }}",
-    desktop_deepview : "homeaway_deepview_de_DE",
-    og_title : "FeWo-direkt HomeAway Ferienwohnungen & Ferienhäuser",
-    og_description : "Raus in die Welt in wenigen Fingertipps - in unserer kostenlosen FeWo-direkt Urlaubs-App halten Sie über 1 Million Ferienhäuser und Ferienwohnungen rund um den Globus in einer Hand."
-  }
- 
-          
-};
+          };
  
 /**
 * Gets a branch.io link with appropriate tracking.
@@ -229,6 +209,12 @@ function logit(val) {
 }
   
 </script>
+    </head>
+    
+    <body>
+ <p><a href="#" onClick="functionOne();">Top Text</a></p>
+ <p><a href="javascript:functionTwo();">Bottom Text</a></p>
+ </body>
     
     
 </html>
