@@ -55,7 +55,7 @@
 */
 function createBranchLink(deeplink_path, campaign, feature, channel, language) {
  
-    var activeCellValue = SpreadsheetApp.getActiveSheet().getActiveCell().getValue();
+//     var activeCellValue = SpreadsheetApp.getActiveSheet().getActiveCell().getValue();
     var desktop_deepview,custom_sms_text,og_title,og_description;
  
  
@@ -212,8 +212,7 @@ function logit(val) {
     </head>
     
     <body>
- <p><a href="#" onClick="functionOne();">Top Text</a></p>
- <p><a href="javascript:functionTwo();">Bottom Text</a></p>
+ <p><a href="#" onClick="createBranchLink('splash', 'HAUS_welcome_email', 'marketing', 'email', 'en_US');">Top Text</a></p>
  </body>
     
     
