@@ -6,6 +6,9 @@
             branch.init('key_live_mkzBv1DALKDBrI3HKxxI8kapwyiX7qVB', function(err, data) {
                 
 //                 document.getElementById("url").innerHTML = "Has_app: "+ data.has_app;
+                if (data && data[“data_parsed”][“~referring_link”]) {
+                    console.log(“referring link”, data[“data_parsed”][“~referring_link”]);
+                }
             
             
             });
