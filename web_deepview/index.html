@@ -3,32 +3,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript">
             (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-            branch.init('key_live_fpxo9JYGeZZcJeTeaiarYeceFwa1I8q3', function(err, data) {
+            branch.init('key_live_mkzBv1DALKDBrI3HKxxI8kapwyiX7qVB', function(err, data) {
                 
-                document.getElementById("has_app").innerHTML = "Has_app: "+ data.has_app;
+//                 document.getElementById("url").innerHTML = "Has_app: "+ data.has_app;
             
             
-            });
-          
-          
-          branch.deepview(
-            {
-              channel: 'facebook',
-              data: {
-                mydata: 'content of my data'
-              },
-              feature: 'dashboard'
-            },
-            {
-              make_new_link: true,
-            },
-            function(err) {
-              console.log(err || 'no error');
             });
         </script>
     </head>
     <body>
        <p>Deepview Test</p>
-        <p id="has_app"> </p>
+        <p id="url">test url </p>
     </body>
 </html>
