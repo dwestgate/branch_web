@@ -8,41 +8,7 @@
                 })(window,document,'script','dataLayer','GTM-T56RJKJ');</script>
     End Google Tag Manager -->
     
-    <!--Branch-->
-    <script type="text/javascript">
-    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
-    branch.init('key_live_ohAyg8SNJ1k2jX576E5iNalkyqc4tzEb', function(err, data) {
-        
-        // callback to handle err or data
-        //window.location.replace("http://www.gmail.com");
-        
-    });
-      
-      branch.sendSMS(
-    '9999999999',
-    {
-        tags: ['tag1', 'tag2'],
-        channel: 'facebook',
-        feature: 'dashboard',
-        stage: 'new user',
-        data: {
-            mydata: 'something',
-            foo: 'bar',
-            '$desktop_url': ' http://joinbubble.com/',
-            '$ios_url': ' http://joinbubble.com/',
-            '$ipad_url': ' http://joinbubble.com/',
-            '$android_url': ' http://joinbubble.com/',
-            '$og_app_id': '12345',
-            '$og_title': 'Bubble',
-            '$og_description': 'Find a Babysitter Trusted by Your Friends.',
-            '$og_image_url': 'http://joinbubble.com/wp-content/uploads/2016/02/cropped-ic_launcher_APP.png'
-        }
-    },
-    { make_new_link: true }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
-    function(err) { console.log(err); }
-);
-    </script>
-    <!--End of branch-->
+  
   </head>
   <body>
     <!-- Google Tag Manager (noscript)
@@ -59,7 +25,41 @@
       </fieldset>
     </section>
     
+     <!-- branch -->
+    <script type='text/javascript'>
+      // cache DOM
+      document.getElementById('sms').addEventListener('click', linkSms);
+      var phoneNumber = document.getElementById('phone');
+      (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
+      branch.init('key_live_nkFFEaOnNBiIaOPil1D23ihlusfLTEDO');
+      
+      function linkSms() {
+        var phone = phoneNumber.value.replace(/\D/g,'') || 'blank';
+        var linkOptions = { 
+          make_new_link: true
+        };
+        var linkData = {
+          tags: [ 'tag1', 'tag2' ],
+          channel: 'facebook',
+          feature: 'dashboard',
+          stage: 'new user',
+          alias: '',
+          data: {
+            'custom_bool': true,
+            'custom_int': 123,
+            'custom_string': 'hello',
+            '$og_title': 'Bubble',
+            '$og_description': 'Find a Babysitter Trusted by Your Friends.',
+            '$og_image_url': 'http://joinbubble.com/wp-content/uploads/2016/02/cropped-ic_launcher_APP.png'
+          }
+        };
+        
+        branch.sendSMS(phone, linkData, linkOptions, function(err, link) { 
+          console.log(err); 
+        });
+      
+      }
     
-    
+    </script>
   </body>
 </html>
