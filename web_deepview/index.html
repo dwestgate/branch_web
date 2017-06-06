@@ -6,14 +6,31 @@
       branch.init('key_live_cnChxhZYcC9rBMAG82xLNjdcFBokyGD0', function(err, data) {
         
         document.getElementById("Link").innerHTML = "Branch Link data: "+ JSON.stringify(data.data_parsed);
-        
-        
-            
-            });
+      
+      });
+      
+      branch.deepview(
+        {
+          campaign: 'testFb',
+          
+        },
+        {
+          open_app: true
+        },
+        function(err) {
+          console.log(err || 'no error');
+        }
+      );
     </script>
   </head>
   <body>
     <p>Deepview Test</p>
     <p id="Link">test url </p>
+    
+    <section>
+      <fieldset>
+        <button type="button" onclick="branch.deepviewCta()">Get the app</button>
+      </fieldset>    
+    </section>
   </body>
 </html>
