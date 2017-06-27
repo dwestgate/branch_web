@@ -12,17 +12,28 @@
           
           var url = window.location.href;
           var params = url.split('?');
-           document.getElementById('branch_match').value = params[1]; 
+//            document.getElementById('branch_match').value = params[1]; 
+            
+            var url = "https://amruta-d.github.io/branch_web/branch_custom_event/index.html"+params[1];
+            
+            $('#track').click(function() {
+			window.location.replace(url);
+			});
+		});
             
             
             
         </script>
     </head>
     <body>
-        <form action="https://amruta-d.github.io/branch_web/branch_custom_event/index.html" method="POST">
+<!--         <form action="https://amruta-d.github.io/branch_web/branch_custom_event/index.html" method="POST">
             <input type="hidden" id="branch_match" value="" />
-    <input type="submit">
-        </form>
+    <input type="submit"> -->
+        
+        
+<!--         </form> -->
+        
+        <button id="track" class="btn btn-info">.nextpage()</button>
 
 
     </body>
